@@ -2,18 +2,19 @@
 Breadth-first Searching_2D (BFS)
 @author: huiming zhou
 """
+import math
+import heapq
 
 import os
 import sys
-from collections import deque
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) +
                 "/../../Search_based_Planning/")
 
-from Search_2D import plotting, env
+from Search_2D import plotting
 from Search_2D.Astar import AStar
-import math
-import heapq
+
+# from collections import deque
 
 class BFS(AStar):
     """BFS add the new visited node in the end of the openset
