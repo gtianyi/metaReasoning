@@ -37,6 +37,8 @@ class Plotting:
             self.plot_visited(visited[k], cl[k])
             plt.pause(0.2)
             self.plot_path(path[k])
+            # plt.cla()
+            # self.plot_grid(name, path[k][-1])
             path_combine += path[k]
             plt.pause(0.2)
         if self.xI in path_combine:
@@ -61,11 +63,15 @@ class Plotting:
         self.plot_path(path)
         plt.show()
 
-    def plot_grid(self, name):
+    def plot_grid(self, name, newStart = []):
         obs_x = [x[0] for x in self.obs]
         obs_y = [x[1] for x in self.obs]
+        
+        if newStart:
+            plt.plot(newStart[0], newStart[1], "bs")
+        else:
+            plt.plot(self.xI[0], self.xI[1], "bs")
 
-        plt.plot(self.xI[0], self.xI[1], "bs")
         plt.plot(self.xG[0], self.xG[1], "gs")
         plt.plot(obs_x, obs_y, "sk")
         plt.title(name)
