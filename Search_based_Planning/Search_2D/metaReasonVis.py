@@ -42,7 +42,8 @@ def main():
 
     problemFile = '/home/aifs1/gu/phd/research/workingPaper/realtime-nancy/worlds/gridPathfinding/exampleworlds/small-3.gp'
     # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/onecommitvis.s3.json'
-    resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/lsslrtavis.s3.json'
+    # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/lsslrtavis.s3.json'
+    resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/vistest.json'
 
     # system.run('cpp executable -vis resultvisfile < input')
 
