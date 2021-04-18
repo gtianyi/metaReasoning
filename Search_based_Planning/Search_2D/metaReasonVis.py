@@ -3,16 +3,17 @@ LRTA_star 2D (Learning Real-time A*)
 @author: huiming zhou
 """
 
-import os
 import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) +
+                "/../../Search_based_Planning/")
+
+
+from Search_2D import queue, plotting, env
 import copy
 import math
 import json
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) +
-                "/../../Search_based_Planning/")
-
-from Search_2D import queue, plotting, env
 
 def parseVisFile(file):
     paths = []
@@ -21,9 +22,10 @@ def parseVisFile(file):
         result = json.load(json_data)
         paths = result["path"]
         visited = result["visited"]
+        isKeepThinking = result["isKeepThinking"]
 
-    resultPaths= []
-    resultVisitied= []
+    resultPaths = []
+    resultVisitied = []
 
     for path in paths:
         path = [(int(point.split()[0]), int(point.split()[1]))
@@ -35,7 +37,7 @@ def parseVisFile(file):
                      for point in pointList]
         resultVisitied.append(pointList)
 
-    return resultPaths, resultVisitied
+    return resultPaths, resultVisitied, isKeepThinking
 
 
 def main():
@@ -49,13 +51,15 @@ def main():
 
     plot = plotting.Plotting(problemFile)
 
-    path, visited = parseVisFile(resultVisFile)
+    path, visited, isKeepThinking = parseVisFile(resultVisFile)
 
     print("path", path)
     print("visited", visited)
+    print("isKeepThinking", isKeepThinking)
 
     # plot.animation_one(path, visited, "Fixed Strategy: Commit One")
-    plot.animation_alltheway(path, visited, "Fixed Strategy: Commit All")
+    # plot.animation_alltheway(path, visited, "Fixed Strategy: Commit All")
+    plot.animation_deepthinking(path, visited, isKeepThinking, "Our Approach")
 
 
 if __name__ == '__main__':

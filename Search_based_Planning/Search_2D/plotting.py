@@ -64,6 +64,39 @@ class Plotting:
         self.plot_path(path_combine)
         plt.show()
 
+    def animation_deepthinking(self, path, visited, isKeepThinking, name):
+        self.plot_grid(name)
+        plt.pause(15)
+        cl = self.color_list_2()
+        path_combine = []
+
+        keepThinkingVisitied = []
+        for k in range(len(path)):
+            # print("k", k)
+            self.plot_visited(visited[k], cl[0])
+            plt.pause(0.2)
+            # self.plot_path(path[k])
+            path_combine += path[k]
+            self.plot_path(path_combine)
+            plt.cla()
+            self.plot_grid(name, path[k][-1])
+            self.plot_path(path_combine)
+
+            if not isKeepThinking[k]:
+                keepThinkingVisitied=list(visited[k])
+            else:
+                keepThinkingVisitied+=visited[k]
+                self.plot_visited(keepThinkingVisitied, cl[2], 0.00001)
+
+            plt.pause(0.2)
+            
+
+        if self.xI in path_combine:
+            path_combine.remove(self.xI)
+        self.plot_path(path_combine)
+        plt.show()
+
+
 
     def plot_grid(self, name, newStart = []):
         obs_x = [x[0] for x in self.obs]
@@ -79,7 +112,7 @@ class Plotting:
         plt.title(name)
         plt.axis("equal")
 
-    def plot_visited(self, visited, cl='gray'):
+    def plot_visited(self, visited, cl='gray', pauseDuration=0.001):
         if self.xI in visited:
             visited.remove(self.xI)
 
@@ -104,8 +137,8 @@ class Plotting:
             # length = 15
 
             if count % length == 0:
-                plt.pause(0.001)
-        plt.pause(0.01)
+                plt.pause(pauseDuration)
+        plt.pause(pauseDuration * 10)
 
     def plot_path(self, path, cl='r', flag=False):
         path_x = [path[i][0] for i in range(len(path))]
