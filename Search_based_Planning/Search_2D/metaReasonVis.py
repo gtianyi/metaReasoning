@@ -52,7 +52,12 @@ def main():
     problemFile = '/home/aifs1/gu/phd/research/workingPaper/realtime-nancy/worlds/gridPathfinding/exampleworlds/small-3.gp'
     # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/onecommitvis.s3.json'
     # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/lsslrtavis.s3.json'
-    resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/vistest.json'
+    resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/dtrts.small-3.json'
+
+    # problemFile = '/home/aifs1/gu/phd/research/workingPaper/realtime-nancy/worlds/gridPathfinding/exampleworlds/small-2.gp'
+    # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/onecommitvis.s2.json'
+    # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/allthewaycommitvis.s2.json'
+    # resultVisFile = '/home/aifs1/gu/phd/research/workingPaper/metareasoning/build_debug/vistest.json'
 
     # system.run('cpp executable -vis resultvisfile < input')
 
