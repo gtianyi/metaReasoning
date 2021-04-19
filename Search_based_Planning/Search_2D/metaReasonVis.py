@@ -23,9 +23,11 @@ def parseVisFile(file):
         paths = result["path"]
         visited = result["visited"]
         isKeepThinking = result["isKeepThinking"]
+        committed = result["committed"]
 
     resultPaths = []
     resultVisitied = []
+    resultCommitted = []
 
     for path in paths:
         path = [(int(point.split()[0]), int(point.split()[1]))
@@ -37,7 +39,12 @@ def parseVisFile(file):
                      for point in pointList]
         resultVisitied.append(pointList)
 
-    return resultPaths, resultVisitied, isKeepThinking
+    for pointList in committed:
+        pointList = [(int(point.split()[0]), int(point.split()[1]))
+                     for point in pointList]
+        resultCommitted.append(pointList)
+
+    return resultPaths, resultVisitied, isKeepThinking, resultCommitted
 
 
 def main():
@@ -51,15 +58,16 @@ def main():
 
     plot = plotting.Plotting(problemFile)
 
-    path, visited, isKeepThinking = parseVisFile(resultVisFile)
+    path, visited, isKeepThinking, committed = parseVisFile(resultVisFile)
 
     print("path", path)
     print("visited", visited)
     print("isKeepThinking", isKeepThinking)
+    print("committed", committed)
 
     # plot.animation_one(path, visited, "Fixed Strategy: Commit One")
     # plot.animation_alltheway(path, visited, "Fixed Strategy: Commit All")
-    plot.animation_deepthinking(path, visited, isKeepThinking, "Our Approach")
+    plot.animation_deepthinking(path, visited, isKeepThinking, committed, "Our Approach")
 
 
 if __name__ == '__main__':

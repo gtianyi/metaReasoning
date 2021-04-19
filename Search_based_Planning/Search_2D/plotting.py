@@ -64,7 +64,7 @@ class Plotting:
         self.plot_path(path_combine)
         plt.show()
 
-    def animation_deepthinking(self, path, visited, isKeepThinking, name):
+    def animation_deepthinking(self, path, visited, isKeepThinking, committed, name):
         self.plot_grid(name)
         plt.pause(15)
         cl = self.color_list_2()
@@ -76,7 +76,7 @@ class Plotting:
             self.plot_visited(visited[k], cl[0])
             plt.pause(0.2)
             # self.plot_path(path[k])
-            path_combine += path[k]
+            path_combine += committed[k]
             self.plot_path(path_combine)
             plt.cla()
             self.plot_grid(name, path[k][-1])
