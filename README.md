@@ -1,6 +1,6 @@
 Overview
 ------
-This repository implements meta-reasoning algorithms in grid pathfinding with dynamic obstacles.
+This repository implements metareasoning animation for grid pathfinding.
 
 Reference
 ------
