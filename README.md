@@ -12,6 +12,23 @@ This repository implements metareasoning animation for grid pathfinding.
 </table>
 </div>
 
+### Fixed Strategy: commit all the way
+<div align=right>
+<table>
+  <tr>
+    <td><img src="https://github.com/gtianyi/metaReasoningAnimation/blob/master/gif/commitAll-s3.gif" alt="commitone" width="800"/></a></td>
+  </tr>
+</table>
+</div>
+
+### Our Approach: commit when u(commit) > u(not_commit)
+<div align=right>
+<table>
+  <tr>
+    <td><img src="https://github.com/gtianyi/metaReasoningAnimation/blob/master/gif/ourApproach-s3.gif" alt="commitone" width="800"/></a></td>
+  </tr>
+</table>
+</div>
 
 Reference
 ------
