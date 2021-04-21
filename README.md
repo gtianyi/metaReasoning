@@ -2,7 +2,7 @@ Overview
 ------
 This repository implements metareasoning animation for grid pathfinding.
 
-## Animations - Example 1 : benifit of aggressive committing and thinking ahead
+## Example 1 : benifit of aggressive committing and thinking ahead
 ### Fixed Strategy: commit one
 <div align=right>
 <table>
@@ -30,7 +30,7 @@ This repository implements metareasoning animation for grid pathfinding.
 </table>
 </div>
 
-## Animations - Example 2 : benifit of conservative committing and carefully thinking
+## Example 2 : benifit of conservative committing and carefully thinking
 ### Fixed Strategy: commit one
 <div align=right>
 <table>
